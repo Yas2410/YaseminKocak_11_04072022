@@ -1,0 +1,33 @@
+.kasa-header {
+  margin: 15px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kasa-logo {
+  width: 10%;
+}
+
+.kasa-menu {
+  display: flex;
+  list-style: none;
+  font-family: "Montserrat";
+  color: #ff6060;
+  font-size: 20px;
+}
+
+.header-link {
+  margin-left: 70px;
+  font-size: 20px;
+  color: #ff6060;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.header-link.active {
+  text-decoration: underline;
+}
