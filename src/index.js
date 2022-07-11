@@ -1,14 +1,24 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import ".//styles/index.css";
-import App from ".//components/App";
-import { BrowserRouter as Router } from "react-router-dom";
+//Permet la gestion des routes (association composants//URL)
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+/*"Route" = Composant. Element principal de REACT ROUTER ; A chaque fois qu'on aura
+un rendu visuel sur une URL, il faudra utiliser ce composant*/
+//"Path" = Paramètre qui définit à quel chemin la route est associée
+ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </Router>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
