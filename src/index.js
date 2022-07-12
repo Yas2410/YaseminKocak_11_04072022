@@ -6,6 +6,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Housing from "./pages/Housing";
+import Error from "./pages/Error";
+import Footer from "./components/Footer";
 
 /*"Route" = Composant. Element principal de REACT ROUTER ; A chaque fois qu'on aura
 un rendu visuel sur une URL, il faudra utiliser ce composant*/
@@ -17,7 +20,10 @@ ReactDOM.render(
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="housing/:id/*" element={<Housing />} />
+        <Route path="*" element={<Error />} />
       </Routes>
+      <Footer />
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
