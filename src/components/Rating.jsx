@@ -1,9 +1,15 @@
 import React from "react";
-//npm install react-icons --save
-//icons react // import d'images dans le dossier
+import starRed from "../assets/star-red.svg";
+import starGrey from "../assets/star-grey.svg";
 
-//Images plutot que librarie icons react
+/*SI LIBRAIRIE POSSIBLE
+REACT LIBRARY AVEC AJOUT D'ICONES
+RAPPELES EN BALISE <>
+npm install react-icons --save
+icons react // import d'images dans le dossier
+Images plutot que librarie icons react
 import { VscStarFull } from "react-icons/vsc";
+*/
 
 //Données RATING de mon fichier de data
 const Rating = ({ rating }) => {
@@ -16,6 +22,20 @@ const Rating = ({ rating }) => {
         //Alors les étoiles sont rouges
         //Sinon elles sont grises
         rating >= star ? (
+          <img
+            className="starRed"
+            key={star.toString()}
+            src={starRed}
+            alt=""
+          ></img>
+        ) : (
+          <img
+            className="starGrey"
+            key={star.toString()}
+            src={starGrey}
+            alt=""
+          ></img>
+          /*
           <VscStarFull
             style={{ color: "#FF6060" }}
             className="rating-stars"
@@ -23,7 +43,6 @@ const Rating = ({ rating }) => {
             //Warning: Each child in a list should have a unique "key" prop.
             key={star.toString()}
           />
-        ) : (
           <VscStarFull
             style={{ color: "#E3E3E3" }}
             className="rating-stars"
@@ -31,6 +50,7 @@ const Rating = ({ rating }) => {
             //Warning: Each child in a list should have a unique "key" prop.
             key={star.toString()}
           />
+          */
         )
       )}
     </div>
