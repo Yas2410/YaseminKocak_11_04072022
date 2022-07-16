@@ -12,6 +12,7 @@ import { VscStarFull } from "react-icons/vsc";
 */
 
 //Données RATING de mon fichier de data
+//Chaque location est notée de 1 à 5 => const stars
 const Rating = ({ rating }) => {
   const stars = [1, 2, 3, 4, 5];
 
