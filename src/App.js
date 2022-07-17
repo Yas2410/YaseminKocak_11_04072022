@@ -15,7 +15,7 @@ un rendu visuel sur une URL, il faudra utiliser ce composant*/
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Router>
         <Header />
         <Routes>
