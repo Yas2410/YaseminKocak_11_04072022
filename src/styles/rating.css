@@ -1,0 +1,9 @@
+.rating {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.starRed,
+.starGrey {
+  width: 25px;
+}

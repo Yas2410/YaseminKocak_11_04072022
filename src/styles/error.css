@@ -1,0 +1,24 @@
+.error-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ff6060;
+}
+
+.error-nbr {
+  font-size: 200px;
+  font-weight: 700;
+}
+
+.error-txt {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 75px;
+}
+
+.home-link {
+  color: #ff6060;
+  font-size: 18px;
+  text-decoration: underline;
+}

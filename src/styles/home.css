@@ -1,18 +1,9 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin: 3% 7% 4% 7%;
-}
-
-.location-section {
-  width: 100%;
-  background-color: #f6f6f6;
+.housingAll-section {
+  margin: 55px 100px;
+  background-color: #f7f7f7;
   border-radius: 25px;
   display: grid;
   grid-template-columns: repeat(3, 33%);
   justify-items: center;
-  padding-top: 56px;
-  text-decoration: none;
+  padding: 30px;
 }

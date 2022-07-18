@@ -1,5 +1,9 @@
-import React from "react";
+//Import de LINK qui va permettre la navigation entre
+//mes pages
+import { Link } from "react-router-dom";
+//Import du logo
 import logoWhite from "../assets/logo-white.png";
+//Style footer
 import "../styles/footer.css";
 
 function Footer() {
@@ -9,9 +13,11 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <img src={logoWhite} alt="Logo Kasa" className="logo-white" />
+      <Link to="/">
+        <img src={logoWhite} alt="Logo Kasa" className="logo-white" />
+      </Link>
       <p className="footer-txt">
-        &copy;
+        <span className="copyright">&copy;</span>
         {currentYear} Kasa. All rights reserved
       </p>
     </footer>

@@ -1,48 +1,57 @@
 //J'importe mon fichier avec ma méthode fetch
+//Import de ma méthode useEffect contenant le fetch de mes données
 import { useFetch } from "../utils/useFetch.js";
+//import de USEPARAMS : Permettre de controler la navigation
+//Ici, avec l'id des différentes locations
 import { useParams } from "react-router-dom";
-import "../styles/housing.css";
+//Import de mon composant Rating pour la notation de la location
+//et de mon composant Error en cas d'id incorrect : page non trouvée
 import Rating from "../components/Rating";
 import Error from "../pages/Error";
+import Slider from "../components/Slider";
+//Style des pages de locations détaillées
+import "../styles/housing.css";
 
 function Housing() {
+  //Je fetche les données de mon fichier json
   const { data } = useFetch("housing.json");
   //let urlParams = useParams();
+  //Ici, l'url propre à chaque location sera :
+  //http://localhost:3000/housing= +ID DE LA LOCATION
   const { id } = useParams(`/housing=`);
-  const locationData = data.find((loc) => loc.id === id);
+  //Méthode find() : Faire matcher les ID
+  const housingData = data.find((housing) => housing.id === id);
 
-  /*
-  if (locationData == null) {
-    return <Navigate to="/error" />;
-  }
-  */
   return (
-    <div className="location-mainPage">
-      <div className="data-section">
-        {locationData ? (
-          <div className="location-section">
-            <div className="location-infos">
-              <h1 className="title">{locationData.title}</h1>
-              <h2 className="location">{locationData.location}</h2>
-              <ul className="tag">
-                {locationData.tags.map((tag) => {
-                  return (
-                    <li className="tag-elt" key={tag}>
-                      {tag}
-                    </li>
-                  );
-                })}
-              </ul>
-              <div className="host">
-                <div className="host-infos">
-                  <p className="host-name">{locationData.host.name}</p>
+    <div className="housing-mainPage">
+      <div className="housing-dataDetails">
+        {housingData ? (
+          <div className="housing-section">
+            <Slider />
+            <div className="housing-infos">
+              <div className="housing-area">
+                <h1 className="housing-title">{housingData.title}</h1>
+                <h2 className="housing-localization">{housingData.location}</h2>
+                <ul className="housing-tag">
+                  {housingData.tags.map((tag) => {
+                    return (
+                      <li className="tag-elt" key={tag}>
+                        {tag}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+              <div className="housing-host">
+                <div className="host-profile">
+                  <p className="host-name">{housingData.host.name}</p>
                   <img
                     className="host-img"
-                    src={locationData.host.picture}
-                    alt={"Photo de" + locationData.host.name}
+                    src={housingData.host.picture}
+                    alt={"Photo de" + housingData.host.name}
                   />
                 </div>
-                <Rating className="rating" rating={locationData.rating} />
+                <Rating className="rating" rating={housingData.rating} />
               </div>
             </div>
           </div>
@@ -53,5 +62,11 @@ function Housing() {
     </div>
   );
 }
+
+/*
+  if (housingData === null) {
+    return <Navigate to="/error" />;
+  }
+  */
 
 export default Housing;

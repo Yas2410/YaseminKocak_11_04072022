@@ -1,5 +1,5 @@
 import React from "react";
-import ".//styles/index.css";
+import "./styles/index.css";
 //Permet la gestion des routes (association composants//URL)
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";

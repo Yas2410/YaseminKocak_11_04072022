@@ -1,19 +1,9 @@
-.location {
-  width: 90%;
-  height: 325px;
+.housing-preview {
+  height: 280px;
   margin: 15px;
   position: relative;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
-  text-decoration: none;
-}
-
-/*
-.location-link {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  text-decoration: none;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
@@ -21,32 +11,30 @@
   );
   z-index: 1;
 }
-*/
 
-.location-img {
+.housing-preview:hover {
+  background: none;
+}
+.housing-img {
   width: 100%;
   height: 100%;
   position: relative;
   object-fit: cover;
-  transform: scale(1);
-  transition: all 350ms ease-in-out;
   mix-blend-mode: darken;
   z-index: 0;
 }
 
-.location-title {
-  text-decoration: none;
+.housingAll-title {
   width: calc(100% - 40px);
-  height: 50px;
+  line-height: 25px;
+  position: absolute;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  margin: 0px;
+  align-items: center;
+  justify-content: flex-start;
   color: white;
-  position: relative;
-  left: 20px;
-  bottom: 70px;
+  left: 15px;
+  bottom: 10px;
   font-size: 18px;
+  font-weight: 500;
   z-index: 2;
 }

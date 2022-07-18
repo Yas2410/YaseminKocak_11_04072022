@@ -1,6 +1,13 @@
-import "../styles/header.css";
-import logo from "../assets/logo.png";
+//Import de LINK qui va permettre la navigation entre
+//mes pages
+
+//Ici NAVLINK : Pour mettre en surbrillance le lien actif
+
 import { Link, NavLink } from "react-router-dom";
+//Import du logo
+import logo from "../assets/logo.png";
+//Style header
+import "../styles/header.css";
 
 function Header() {
   return (

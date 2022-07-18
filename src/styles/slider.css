@@ -1,0 +1,10 @@
+.housing-diaporama {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 35px;
+  background-color: black;
+  margin-bottom: 25px;
+}

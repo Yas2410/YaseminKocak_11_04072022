@@ -30,7 +30,7 @@ function Home() {
     //qui ont changé, ont été supprimé ou modifié
     <div className="main">
       <Banner img={banner} txt="Chez vous, partout et ailleurs" />
-      <div className="location-section">
+      <div className="housingAll-section">
         {data.map((housing) => (
           <HousingAll
             id={housing.id}

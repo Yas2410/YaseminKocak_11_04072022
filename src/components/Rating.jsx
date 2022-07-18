@@ -1,6 +1,9 @@
-import React from "react";
+//Import de mes SVG Stars qui vont servir à
+//illustrer le Rating des locations
 import starRed from "../assets/star-red.svg";
 import starGrey from "../assets/star-grey.svg";
+//Style section Rating
+import "../styles/rating.css";
 
 /*SI LIBRAIRIE POSSIBLE
 REACT LIBRARY AVEC AJOUT D'ICONES
