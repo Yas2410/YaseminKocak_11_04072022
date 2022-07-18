@@ -1,49 +1,54 @@
-import { useParams, Navigate } from "react-router-dom";
+//J'importe mon fichier avec ma méthode fetch
+import { useFetch } from "../utils/useFetch.js";
+import { useParams } from "react-router-dom";
 import "../styles/housing.css";
-import { data } from "../data/data";
 import Rating from "../components/Rating";
+import Error from "../pages/Error";
 
 function Housing() {
-  let urlParams = useParams();
+  const { data } = useFetch("housing.json");
+  //let urlParams = useParams();
+  const { id } = useParams(`/housing=`);
+  const locationData = data.find((loc) => loc.id === id);
 
-  const locationData = data.find((data) => data.id === urlParams.id);
-
+  /*
   if (locationData == null) {
     return <Navigate to="/error" />;
   }
-
+  */
   return (
-    <div className="location-main">
-      <div className="location-info">
-        <h1 className="title">{locationData.title}</h1>
-        <h2 className="location">{locationData.location}</h2>
-        <ul className="tag">
-          {locationData.tags.map((tag) => {
-            return (
-              <li key={tag} className="tag-elt">
-                {tag}
-              </li>
-            );
-          })}
-        </ul>
-
-        <div className="host">
-          <h3 className="host-name">
-            {locationData.host.name.split(" ")[0]}
-            <br />
-            {locationData.host.name.split(" ")[1]}
-          </h3>
-          <div>
-            <img
-              src={locationData.host.picture}
-              alt="host profile"
-              className="host-img"
-            />
+    <div className="location-mainPage">
+      <div className="data-section">
+        {locationData ? (
+          <div className="location-section">
+            <div className="location-infos">
+              <h1 className="title">{locationData.title}</h1>
+              <h2 className="location">{locationData.location}</h2>
+              <ul className="tag">
+                {locationData.tags.map((tag) => {
+                  return (
+                    <li className="tag-elt" key={tag}>
+                      {tag}
+                    </li>
+                  );
+                })}
+              </ul>
+              <div className="host">
+                <div className="host-infos">
+                  <p className="host-name">{locationData.host.name}</p>
+                  <img
+                    className="host-img"
+                    src={locationData.host.picture}
+                    alt={"Photo de" + locationData.host.name}
+                  />
+                </div>
+                <Rating className="rating" rating={locationData.rating} />
+              </div>
+            </div>
           </div>
-        </div>
-        <div>
-          <Rating rating={locationData.rating} />
-        </div>
+        ) : (
+          <Error />
+        )}
       </div>
     </div>
   );
