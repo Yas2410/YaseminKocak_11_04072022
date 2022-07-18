@@ -1,10 +1,40 @@
-.housing-diaporama {
-  height: 100px;
+.slider-main {
+  height: 380px;
+  border-radius: 25px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.slider-nbr {
+  position: absolute;
+  left: calc(50% - 10px);
+  bottom: 25px;
+  font-size: 20px;
+  color: white;
+  text-shadow: 0px 0px 5px black;
+}
+
+.slider-previous,
+.slider-next {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 35px;
-  background-color: black;
-  margin-bottom: 25px;
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.slider-previous {
+  left: 30px;
+}
+.slider-next {
+  right: 30px;
+}
+
+.slider-iconPrev,
+.slider-iconNext {
+  height: 60px;
 }

@@ -27,7 +27,7 @@ function Housing() {
       <div className="housing-dataDetails">
         {housingData ? (
           <div className="housing-section">
-            <Slider />
+            <Slider pictures={housingData.pictures} />
             <div className="housing-infos">
               <div className="housing-area">
                 <h1 className="housing-title">{housingData.title}</h1>
