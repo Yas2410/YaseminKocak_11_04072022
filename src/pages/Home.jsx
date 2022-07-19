@@ -28,17 +28,19 @@ function Home() {
     //BUT : Apporter une identité stable aux éléments
     //Cela va aider REACT à identifier les éléments
     //qui ont changé, ont été supprimé ou modifié
-    <div className="main">
-      <Banner img={banner} txt="Chez vous, partout et ailleurs" />
-      <div className="housingAll-section">
-        {data.map((housing) => (
-          <HousingAll
-            id={housing.id}
-            cover={housing.cover}
-            title={housing.title}
-            key={housing.id}
-          />
-        ))}
+    <div className="main-section">
+      <div className="main">
+        <Banner img={banner} txt="Chez vous, partout et ailleurs" />
+        <div className="housingAll-section">
+          {data.map((housing) => (
+            <HousingAll
+              id={housing.id}
+              cover={housing.cover}
+              title={housing.title}
+              key={housing.id}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,14 @@
+.main-section {
+  padding-left: 100px;
+  padding-right: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .housingAll-section {
-  margin: 55px 100px;
+  margin: 55px 0 0;
   background-color: #f7f7f7;
   border-radius: 25px;
   display: grid;
