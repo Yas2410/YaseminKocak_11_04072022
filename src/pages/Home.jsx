@@ -10,11 +10,12 @@ import HousingAll from "../components/HousingAll";
 
 //Style de ma page HOME
 import "../styles/home.css";
+import Loader from "../components/Loader.jsx";
 
 function Home() {
   //Appel fetch pour l'affichage de mes données
   //(Méthode USEFETCH : Voir fichier correspondant)
-  const { data } = useFetch("housing.json");
+  const { data, loading } = useFetch("housing.json");
 
   return (
     //Mon Header avec la bannière
@@ -31,16 +32,20 @@ function Home() {
     <div className="main-section">
       <div className="main">
         <Banner img={banner} txt="Chez vous, partout et ailleurs" />
-        <div className="housingAll-section">
-          {data.map((housing) => (
-            <HousingAll
-              id={housing.id}
-              cover={housing.cover}
-              title={housing.title}
-              key={housing.id}
-            />
-          ))}
-        </div>
+        {loading ? (
+          <Loader />
+        ) : (
+          <div className="housingAll-section">
+            {data.map((housing) => (
+              <HousingAll
+                id={housing.id}
+                cover={housing.cover}
+                title={housing.title}
+                key={housing.id}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

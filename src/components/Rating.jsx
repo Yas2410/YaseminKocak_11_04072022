@@ -30,14 +30,14 @@ const Rating = ({ rating }) => {
             className="starRed"
             key={star.toString()}
             src={starRed}
-            alt=""
+            alt="star"
           ></img>
         ) : (
           <img
             className="starGrey"
             key={star.toString()}
             src={starGrey}
-            alt=""
+            alt="star"
           ></img>
           /*
           <VscStarFull

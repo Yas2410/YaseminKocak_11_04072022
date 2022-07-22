@@ -26,3 +26,17 @@
 .copyright {
   margin-right: 10px;
 }
+
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+  .footer {
+    margin-top: 15px;
+  }
+
+  .logo-white {
+    width: 35%;
+  }
+
+  .footer-txt {
+    font-size: 14px;
+  }
+}

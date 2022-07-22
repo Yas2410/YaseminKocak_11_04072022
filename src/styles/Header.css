@@ -34,3 +34,20 @@
 .header-link.active {
   text-decoration: underline;
 }
+
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+  .kasa-header {
+    padding: 0;
+    margin: 25px 15px 0;
+  }
+
+  .kasa-logo {
+    width: 115px;
+  }
+
+  .header-link {
+    font-size: 14px;
+    margin-left: 25px;
+    text-transform: uppercase;
+  }
+}
