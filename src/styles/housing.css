@@ -96,3 +96,62 @@
 .rating {
   margin-top: 15px;
 }
+
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+  .housing-section {
+    align-items: unset;
+  }
+
+  .housing-infos {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .housing-title {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .housing-localization {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .tag-elt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    padding: 0 10px;
+    height: 25px;
+    border-radius: 5px;
+  }
+
+  .housing-host {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .host-name {
+    font-size: 12px;
+    width: 40%;
+    text-align: right;
+  }
+
+  .starRed,
+  .starGrey {
+    width: 20px;
+  }
+
+  .host-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 55px;
+  }
+
+  .rating {
+    margin-top: 0;
+  }
+}

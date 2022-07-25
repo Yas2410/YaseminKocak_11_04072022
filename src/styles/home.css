@@ -22,7 +22,8 @@
     padding: 0 !important;
   }
 
-  .housingAll-section {
+  .housingAll-section,
+  .housing-section {
     margin: 0 15px;
     padding: 0;
     background-color: unset;

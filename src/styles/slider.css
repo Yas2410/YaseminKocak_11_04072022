@@ -44,3 +44,30 @@
   width: 100%;
   object-fit: cover;
 }
+
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+  .housing-mainPage {
+    padding: 0 !important;
+  }
+
+  .slider-main {
+    border-radius: 10px;
+    height: 275px;
+  }
+
+  .slider-iconPrev,
+  .slider-iconNext {
+    height: 30px;
+  }
+
+  .slider-previous {
+    left: 15px;
+  }
+  .slider-next {
+    right: 15px;
+  }
+
+  .slider-nbr {
+    font-size: 16px;
+  }
+}
