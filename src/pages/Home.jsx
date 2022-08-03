@@ -1,6 +1,6 @@
 //J'importe mon fichier avec ma méthode fetch
 //pour l'affichage des datas
-import { useFetch } from "../utils/useFetch.js";
+import { useFetch } from "../hook/useFetch.js";
 //import de mon code concernant la bannière +
 //import de l'image
 import Banner from "../components/Banner";
@@ -33,7 +33,9 @@ function Home() {
       <div className="main">
         <Banner img={banner} txt="Chez vous, partout et ailleurs" />
         {loading ? (
-          <Loader />
+          <div className="loader-center">
+            <Loader />
+          </div>
         ) : (
           <div className="housingAll-section">
             {data.map((housing) => (

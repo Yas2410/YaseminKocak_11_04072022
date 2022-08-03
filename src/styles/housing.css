@@ -22,6 +22,7 @@
   flex-direction: row;
   justify-content: space-between;
   margin-top: 35px;
+  margin-bottom: 50px;
 }
 
 .housing-area {
@@ -131,7 +132,6 @@
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
   }
 
   .host-name {
@@ -153,5 +153,24 @@
 
   .rating {
     margin-top: 0;
+  }
+
+  .housing-infos {
+    margin-bottom: 30px;
+  }
+
+  .housing-dropdown {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+  }
+
+  .dropdown-main {
+    width: 100%;
+  }
+
+  .dropdown-txt {
+    font-size: 14px;
   }
 }

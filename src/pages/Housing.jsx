@@ -1,6 +1,6 @@
 //J'importe mon fichier avec ma méthode fetch
 //Import de ma méthode useEffect contenant le fetch de mes données
-import { useFetch } from "../utils/useFetch.js";
+import { useFetch } from "../hook/useFetch.js";
 //import de USEPARAMS : Permettre de controler la navigation
 //Ici, avec l'id des différentes locations
 import { useParams } from "react-router-dom";
@@ -11,6 +11,8 @@ import Rating from "../components/Rating";
 import Error from "../pages/Error";
 import Slider from "../components/Slider";
 import Loader from "../components/Loader";
+//Et le composant dropdown
+import Dropdown from "../components/Dropdown";
 //Style des pages de locations détaillées
 import "../styles/housing.css";
 
@@ -23,11 +25,13 @@ function Housing() {
   const { id } = useParams(`/housing=`);
   //Méthode find() : Faire matcher les ID
   const housingData = data.find((housing) => housing.id === id);
-  console.log(housingData);
+  //console.log(housingData);
   return (
     <div className="housing-mainPage">
       {loading ? (
-        <Loader />
+        <div className="loader-center">
+          <Loader />
+        </div>
       ) : (
         <div className="housing-dataDetails">
           {housingData ? (
@@ -60,6 +64,16 @@ function Housing() {
                   </div>
                   <Rating className="rating" rating={housingData.rating} />
                 </div>
+              </div>
+              <div className="housing-dropdown">
+                <Dropdown
+                  title="Description"
+                  content={housingData.description}
+                />
+                <Dropdown
+                  title="Équipements"
+                  content={housingData.equipments}
+                />
               </div>
             </div>
           ) : (
