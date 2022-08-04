@@ -1,11 +1,6 @@
-//import USESTATE : Hook (fonction qui va permettre de se
-//brancher sur la gestion d'état local et de cycle de vie de REACT
-//depuis des fonctions composants)
 import { useState } from "react";
-//import de mes icones PREVIOUS & NEXT
 import arrowLeft from "../assets/arrow-left.svg";
 import arrowRight from "../assets/arrow-right.svg";
-//Style de mon diaporama
 import "../styles/slider.css";
 
 //Les props sont des propriétés passées à un composant
@@ -22,12 +17,14 @@ function Slider(props) {
   };
 
   return (
+    //Si le diaporama ne contient pas plus d'une photo
     <div className="slider-main">
       {length === 1 ? (
         <div className="slider-pix">
           <img className="pix" src={props.pictures[0]} alt={"Location"} />
         </div>
       ) : (
+        //SINON, j'intègre des icones permettant de naviguer entre les différents médias :
         //Au clic sur l'icone {arrowLeft}, ma constante "previousSlide"
         //est appliquée : je reviens à l'image précédente
         //Au clic sur l'icone {arrowRight}, ma constante "nextSlide"
@@ -52,6 +49,7 @@ function Slider(props) {
                 )}
               </div>
             );
+            //Ainsi qu'un compteur m'indiquant le média actuel / l'ensemble des médias :
             // Pour la partie "slider-nbr" : length correspond au
             //total des photos pour chaque location
             //En fonction du media qui apparait à l'écran, j'indique

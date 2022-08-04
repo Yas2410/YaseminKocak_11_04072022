@@ -1,7 +1,4 @@
-//Import de LINK qui va permettre la navigation entre
-//mes pages : Ici, retourner à l'accueil suite erreur d'affichage
 import { Link } from "react-router-dom";
-//Style de ma page ERREUR
 import "../styles/error.css";
 
 function Error() {

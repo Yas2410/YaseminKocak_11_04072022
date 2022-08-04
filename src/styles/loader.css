@@ -1,12 +1,11 @@
-/*Empty DIV : Eviter qu'avant le chargement complet de la page,
-la page 404 NOT FOUND N'APPARAISSE*/
-
+/*Position du loader sur ma page web*/
 .loader-center {
   position: fixed;
   top: calc(50% - 40px);
   left: calc(50% - 40px);
 }
 
+/*CERCLE LOADER*/
 .loading-page {
   border: 10px solid #f3f3f3;
   border-top: 10px solid #ff6060;
@@ -16,6 +15,8 @@ la page 404 NOT FOUND N'APPARAISSE*/
   animation: spin 1s linear infinite;
 }
 
+/*AJOUT D'UN KEYFRAME pour
+ l'animation du cercle*/
 @keyframes spin {
   0% {
     transform: rotate(0deg);

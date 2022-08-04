@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "../styles/dropdown.css";
 import dropdownOpen from "../assets/dropdown-open.svg";
+import "../styles/dropdown.css";
 
 function Dropdown({ title, content }) {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -8,11 +8,13 @@ function Dropdown({ title, content }) {
   typeof content === "string"
     ? (newContent = [content])
     : (newContent = content);
-  //console.log(content);
+
   return (
     <div className="dropdown-main">
       <div
         className="dropdown-info"
+        //Au clic, mon useState qui était faux passe vrai =
+        //de fermé, on passe à ouvert
         onClick={() =>
           isDropdownOpen ? setDropdownOpen(false) : setDropdownOpen(true)
         }

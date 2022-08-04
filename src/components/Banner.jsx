@@ -1,5 +1,3 @@
-//import du fichier qui va gérer la mise en page (CSS)
-//de mon composant "Banner"
 import "../styles/banner.css";
 
 function Banner({ img, txt }) {

@@ -1,19 +1,12 @@
-//J'importe mon fichier avec ma méthode fetch
-//Import de ma méthode useEffect contenant le fetch de mes données
 import { useFetch } from "../hook/useFetch.js";
 //import de USEPARAMS : Permettre de controler la navigation
-//Ici, avec l'id des différentes locations
+//Ici, avec l'id des différentes locations (retourne une paire clé/valeur)
 import { useParams } from "react-router-dom";
-//Import de mon composant Rating pour la notation de la location
-//et de mon composant Error en cas d'id incorrect : page non trouvée
-//+ Fonction Loader
 import Rating from "../components/Rating";
 import Error from "../pages/Error";
 import Slider from "../components/Slider";
 import Loader from "../components/Loader";
-//Et le composant dropdown
 import Dropdown from "../components/Dropdown";
-//Style des pages de locations détaillées
 import "../styles/housing.css";
 
 function Housing() {
@@ -25,14 +18,16 @@ function Housing() {
   const { id } = useParams(`/housing=`);
   //Méthode find() : Faire matcher les ID
   const housingData = data.find((housing) => housing.id === id);
-  //console.log(housingData);
+
   return (
+    //Import de mon composant Loader, le temps du chargement des données
     <div className="housing-mainPage">
       {loading ? (
         <div className="loader-center">
           <Loader />
         </div>
       ) : (
+        //Une fois le chargement OK, j'affiche mes données
         <div className="housing-dataDetails">
           {housingData ? (
             <div className="housing-section">
@@ -77,6 +72,8 @@ function Housing() {
               </div>
             </div>
           ) : (
+            //Sinon, si les données ne sont pas correctes (erreur dans url par exemple)
+            //j'affiche alors ma page d'erreur 404
             <Error />
           )}
         </div>
@@ -84,11 +81,5 @@ function Housing() {
     </div>
   );
 }
-
-/*
-  if (housingData === null) {
-    return <Navigate to="/error" />;
-  }
-  */
 
 export default Housing;

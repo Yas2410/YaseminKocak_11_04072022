@@ -45,6 +45,7 @@
   object-fit: cover;
 }
 
+/*RESPONSIVE*/
 @media only screen and (min-width: 0px) and (max-width: 768px) {
   .housing-mainPage {
     padding: 0 !important;

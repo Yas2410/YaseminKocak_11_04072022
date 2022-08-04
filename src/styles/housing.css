@@ -8,7 +8,8 @@
 }
 
 @media only screen and (min-width: 1400px) {
-  /* HEADER - MENU */
+  /* HEADER - MENU 
+  Réglages affichage sur grands écrans*/
   .housing-mainPage,
   .kasa-header,
   .main-section {
@@ -98,6 +99,7 @@
   margin-top: 15px;
 }
 
+/*RESPONSIVE*/
 @media only screen and (min-width: 0px) and (max-width: 768px) {
   .housing-section {
     align-items: unset;
